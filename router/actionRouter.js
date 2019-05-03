@@ -2,18 +2,26 @@ const router = require("express").Router();
 
 const knex = require("knex");
 
-const knexConfig = {
-  client: "sqlite3",
-  useNullAsDefault: true,
-  connection: {
-    filename: "./data/lambda.sqlite3"
-  }
-};
-
-const db = knex(knexConfig);
+const db = require("../data/db");
 
 router.get("/", (req, res) => {
-  res.send("Action-Server");
+  db.getActions()
+    .then(action => {
+      res.status(200).json(action);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+});
+
+router.post("/", (req, res) => {
+  db.addActions(req.body)
+    .then(action => {
+      res.status(200).json(action);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
