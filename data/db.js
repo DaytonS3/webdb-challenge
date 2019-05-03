@@ -19,5 +19,17 @@ module.exports = {
 
   addActions: action => {
     return db("actions").insert(action);
+  },
+
+  getProjectById: id => {
+    return db("projects")
+      .where({ id })
+      .first();
+  },
+
+  getProjectActions: projectId => {
+    return db("projects")
+      .where({ id: projectId })
+      .then(project => project);
   }
 };
