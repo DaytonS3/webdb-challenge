@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^4.16.4",
+    "knex": "^0.16.5",
+    "sqlite3": "^4.0.6"
+  },
+  "name": "webdb-challenge",
+  "description": "This challenge allows you to practice the concepts and techniques learned over the past Sprint and apply them in a concrete project.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "server": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaytonS3/webdb-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaytonS3/webdb-challenge/issues"
+  },
+  "homepage": "https://github.com/DaytonS3/webdb-challenge#readme"
+}
